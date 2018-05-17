@@ -1,0 +1,105 @@
+﻿<Page x:Class="KivetítőWPF3MVVMPages.Dal"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KivetítőWPF3MVVMPages"
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      mc:Ignorable="d" 
+      DataContext="{Binding DalView, Source={StaticResource Locator}}"
+      d:DesignHeight="450" d:DesignWidth="390"
+      Title="Dal">
+
+    <Grid x:Name="Grid_Munkafelulet">
+        <RadioButton x:Name="RadioBtn_Szovegben"
+                        Content="Szövegben keres"
+                        Margin="203,58,0,0"
+                        Grid.IsSharedSizeScope="True"
+                        Height="18"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Width="118"
+                        FontSize="12"/>
+
+        <RadioButton x:Name="RadioBtn_Cimben"
+                        Content="Címben keres"
+                        Margin="203,35,0,0"
+                        Grid.IsSharedSizeScope="True"
+                        HorizontalAlignment="Left"
+                        Width="118"
+                        Height="18"
+                        VerticalAlignment="Top"
+                        FontSize="12"/>
+
+        <TextBox x:Name="TextBox_Keres"
+                    Margin="10,10,0,0"
+                    TextWrapping="Wrap"
+                    Text="Itt kereshetsz a dalok között."
+                    Grid.IsSharedSizeScope="True"
+                    Foreground="#FF7A7A7A"
+                    HorizontalAlignment="Left"
+                    Width="188"
+                    Height="20"
+                    VerticalAlignment="Top">
+
+            <i:Interaction.Triggers>
+
+                <i:EventTrigger EventName="GotFocus">
+                    <i:InvokeCommandAction Command="{Binding TextBoxKeresGotFocusCommand}"
+                                           CommandParameter="{Binding RelativeSource={RelativeSource
+                                                                Mode=FindAncestor,
+                                                                AncestorType={x:Type TextBox}}}"/>
+                </i:EventTrigger>
+
+                <i:EventTrigger EventName="LostFocus">
+                    <i:InvokeCommandAction Command="{Binding TextBoxKeresLostFocusCommand}"
+                                           CommandParameter="{Binding RelativeSource={RelativeSource
+                                                                Mode=FindAncestor,
+                                                                AncestorType={x:Type TextBox}}}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+
+        </TextBox>
+
+        <Button x:Name="Btn_Keres"
+                Content="Keresés"
+                Margin="203,10,0,0"
+                Grid.IsSharedSizeScope="True"
+                HorizontalAlignment="Left"
+                Width="118"
+                Height="20"
+                VerticalAlignment="Top"/>
+
+        <ListBox x:Name="ListBox_Eredmeny"
+                    Margin="10,35,0,10"
+                    HorizontalContentAlignment="Center"
+                    Grid.IsSharedSizeScope="True"
+                    HorizontalAlignment="Left"
+                    Width="188">
+            <ListBoxItem Content="Eredmény helye"/>
+        </ListBox>
+
+        <TextBlock x:Name="TextBlock_Dalok"
+                    Margin="0,10,10,0"
+                    FontSize="16"
+                    TextAlignment="Right"
+                    Height="27"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right"
+                    Width="60"
+                    Text="Dalok"/>
+
+        <ScrollViewer Margin="203,81,10,10">
+            <WrapPanel >
+
+                <Border Width="120" Height="120" Margin="10" Background="Aqua">
+                    <TextBlock Text="100x100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+
+            </WrapPanel>
+        </ScrollViewer>
+        
+
+    </Grid>
+
+</Page>

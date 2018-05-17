@@ -1,0 +1,26 @@
+﻿<Page x:Class="KivetítőWPF3MVVMPages.IgeEszkozok"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KivetítőWPF3MVVMPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="225"
+      Title="IgeEszkozok">
+
+    <Grid>
+
+        <ScrollViewer x:Name="ScrollWiever_IgekEszkoz"
+                      VerticalScrollBarVisibility="Auto">
+
+            <StackPanel x:Name="StackPanel_IgekEszkoz"
+                        Height="450">
+
+                <Button Height="30" Content="Ige Eszközök"/>
+
+            </StackPanel>
+
+        </ScrollViewer>
+        
+    </Grid>
+</Page>

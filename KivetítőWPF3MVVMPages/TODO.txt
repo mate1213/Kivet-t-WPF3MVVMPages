@@ -1,0 +1,65 @@
+﻿TODO:
+	UserControl: Képek felett szöveg. Wrap panelre tűzhető.
+	Main Window:
+		-> (PopUp Menu): https://www.youtube.com/watch?v=YQ1EJJZBHyE
+		-> Lapok elkészítése (Serkesztő/kivetítő felület)
+				--> Igék:
+					---> Kivetítő felület
+							----> Mindig az igehelynek megfelelő legyen a max kiválasztható
+							----> Állítható átnyúló kivetítés
+							----> Kártyát megjelenítése (listából (külön object) stack panelre)
+							----> Ige Listák
+							----> Fordítások közötti keresés
+
+					---> Szerkeztő felület
+							----> Háttér változtása
+							----> új háttérkép megadása
+							----> Keresés szavak szerint
+
+				--> Dalok:
+					---> Kivetítő felület
+							----> Kártyát megjelenítése (listából (külön object) stack panelre)
+							----> Dalok keresése tartalom vagy cím szerint
+							----> Dalok megjelenítése táblázatban író/fordító dátum, stb szerint
+							----> Dal listák
+							----> AI dal felismerés (sok idő múlva)
+
+					---> Szerkeztő felület
+							----> Háttér változtása
+							----> új háttérkép megadása
+							----> Dalszövegek szerkesztése, és tördelése
+							----> AI automatikus beolvasás, és tördelés pdf, doc, txt fájlokból (sok idő múlva)
+
+				--> Képek
+					---> Kivetítő felület
+							----> Képek megnyitása
+							----> Képek törlése slide-ból/fájl
+							----> Kártyák megjelenítése (listából (külön object) stack panelre)
+							----> Slide-ok létrehozása
+
+					---> Szerkeztő felület
+							----> Áttűnés választása
+							----> Áttűnés automatizálása időre
+
+				--> Videók
+					---> Kivetítő felület
+							----> Videók megnyitása
+							----> Online videó megnyitása, kontrollok a Főképernyőn jelenjenek meg
+							----> Videó vezérlők kialakítása tekerés, play, pause, hangerő, stb.
+
+					---> Szerkeztő felület
+							----> ???Nem lesz???
+
+		-> Menü: ✓
+				--> Bal klikk: mind2 vált ✓
+				--> Görgő klikk: Kivetítő felület vált, szerkesztő felület marad ✓
+				--> Jobb klikk: Serkesztő felület vált, kivetítő felület marad ✓
+
+	Kivetítő Window:
+		Igék/Dalszövegek kivetítése ugyan azon a módon ---> háttérben kép elől szoveg "shadow"-al
+													   ---> Egyszerre csak 3-5 sor mutatása
+													   ---> szöveg váltása kártyákkal
+													   ---> kártyánként más háttér lehetősége
+													   ---> áttűnések váltása
+
+	Beállítások Window:

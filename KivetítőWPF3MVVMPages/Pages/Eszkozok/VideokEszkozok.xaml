@@ -1,0 +1,26 @@
+﻿<Page x:Class="KivetítőWPF3MVVMPages.VideokEszkozok"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KivetítőWPF3MVVMPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="225"
+      Title="VideokEszkozok">
+
+    <Grid>
+
+        <ScrollViewer x:Name="ScrollViewer_VideoEszkoz"
+                      VerticalScrollBarVisibility="Auto">
+
+            <StackPanel x:Name="StackPanel_VideoEszkoz">
+
+                <Button Height="30" Content="Vidó Eszközök"/>
+
+            </StackPanel>
+
+        </ScrollViewer>
+        
+    </Grid>
+    
+</Page>
