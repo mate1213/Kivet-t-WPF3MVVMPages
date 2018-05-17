@@ -1,6 +1,4 @@
 ﻿using GalaSoft.MvvmLight;
-using System.Collections.ObjectModel;
-using System.Windows.Controls;
 
 namespace KivetítőWPF3MVVMPages.Model
 {
@@ -25,15 +23,6 @@ namespace KivetítőWPF3MVVMPages.Model
             {
                 _height = value;
                 RaisePropertyChanged(() => this.Height);
-            }
-        }
-
-        public int Width
-        {
-            get => _width; set
-            {
-                _width = value;
-                RaisePropertyChanged(() => this.Width);
             }
         }
     }

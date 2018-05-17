@@ -7,7 +7,7 @@
       x:Class="KivetítőWPF3MVVMPages.Kep"
       mc:Ignorable="d" 
       DataContext="{Binding KepView, Source={StaticResource Locator}}"
-      d:DesignHeight="450" d:DesignWidth="475"
+      d:DesignHeight="450" d:DesignWidth="490"
       Title="Kep">
 
     <Grid x:Name="Grid_Munkafelulet">
@@ -19,24 +19,41 @@
                    HorizontalAlignment="Right"
                    Width="46" Text="Képek"/>
 
+        <TextBox x:Name="TextBox_Height" Padding="2"
+                 HorizontalAlignment="Left"
+                 Height="23" Margin="10,38,0,0"
+                 TextWrapping="Wrap" Text="TextBox"
+                 VerticalAlignment="Top" Width="120">
+            
+        </TextBox>
+
         <Button x:Name="Button_Betoltes"
-                Content="Betöltés" Width="146"
+                Content="Mappa megnyitása" Width="146"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                 Margin="10,10,0,0" Height="23">
 
             <Button.InputBindings>
-                <MouseBinding MouseAction="LeftClick" Command="{Binding TextBox_DoubleClickCommand}"/>
+                <MouseBinding MouseAction="LeftClick"
+                              Command="{Binding Button_ClickCommand}"
+                              CommandParameter="{Binding ElementName=TextBox_Height, Path=Text}"/>
             </Button.InputBindings>
 
         </Button>
 
-        <TextBox x:Name="TextBox_Forrás"
-                 HorizontalAlignment="Left"
-                 Height="81" Margin="161,10,0,0"
-                 TextWrapping="Wrap" Width="180"
-                 Text="Valami"
-                 Padding="2" VerticalAlignment="Top"/>
+        <Button x:Name="Button_File"
+                Content="Fájlok megnyitása" Width="146"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="161,10,0,0" Height="23">
+
+            <Button.InputBindings>
+                <MouseBinding MouseAction="LeftClick"
+                              Command="{Binding ButtonFile_ClickCommand}"
+                              CommandParameter="{Binding ElementName=TextBox_Height, Path=Text}"/>
+            </Button.InputBindings>
+            
+        </Button>
 
         <ScrollViewer x:Name="ScrollViewer_Kepek" Margin="5,96,5,5"
                       HorizontalAlignment="Stretch"
@@ -47,24 +64,17 @@
                 <ItemsControl Name="images" ItemsSource="{Binding model}" >
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Image Source="{Binding KepHelye}"></Image>
+                            <Image Source="{Binding KepHelye}" Margin="5" Width="{Binding Width}" Height="{Binding Height}"></Image>
+
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            
                             <WrapPanel />
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
-
-                <!--<ItemsControl ItemsSource="{Binding model}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding KepHelye}" Height="{Binding Height}" Width="{Binding Width}" Margin="5"/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>-->
+                
             </WrapPanel>
 
         </ScrollViewer>
