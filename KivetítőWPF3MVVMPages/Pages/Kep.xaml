@@ -47,11 +47,12 @@
                 <ItemsControl Name="images" ItemsSource="{Binding model}" >
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Image Source="{Binding KepHelye}" Height="{Binding Height}" Width="{Binding Width}"  Stretch="Uniform"></Image>
+                            <Image Source="{Binding KepHelye}"></Image>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
+                            
                             <WrapPanel />
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
