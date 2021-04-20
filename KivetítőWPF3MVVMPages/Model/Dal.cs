@@ -1,11 +1,14 @@
 ﻿using GalaSoft.MvvmLight;
 using System.Windows.Controls;
+using System.Collections.ObjectModel;
+using System;
 
 namespace KivetítőWPF3MVVMPages.Model
 {
-    public class Dalok : ObservableObject
+    public class Dal : ObservableObject
     {
         #region Fields
+        
         private string _cim;
         private string _szoveg;
         private string _szerzo;
@@ -13,8 +16,7 @@ namespace KivetítőWPF3MVVMPages.Model
 
         #endregion
 
-        #region Propertys
-
+        #region Dalok Propery-jei
         public string Cim
         {
             get => _cim; set
@@ -50,7 +52,7 @@ namespace KivetítőWPF3MVVMPages.Model
                 RaisePropertyChanged(() => this.Darabolas);
             }
         }
-
         #endregion
+
     }
 }

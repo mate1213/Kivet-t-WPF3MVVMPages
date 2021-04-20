@@ -12,15 +12,21 @@ namespace KivetítőWPF3MVVMPages.ViewModel
 
         public Model.Model model { get; set; }
         public Model.ButtonContent content { get; set; }
-        public List<Model.Dalok> dalAdatok { get; set; }
+        public List<Model.Dal> dalAdatok { get; set; }
+        public List<Model.Kep> kepAdatok { get; set; }
+        public List<Model.Igek> igeAdatok { get; set; }
+
+        #region Pages
         public Kep Kep { get; set; }
         public Ige Ige { get; set; }
         public Dal Dal { get; set; }
         public Video Video { get; set; }
+
         public DalEszkozok DalEszkozok { get; set; }
         public IgeEszkozok IgeEszkozok { get; set; }
         public KepEszkozok KepEszkozok { get; set; }
         public VideokEszkozok VideoEszkozok { get; set; }
+        #endregion
 
         #endregion
 
@@ -38,12 +44,14 @@ namespace KivetítőWPF3MVVMPages.ViewModel
             KepEszkozok = new KepEszkozok();
             DalEszkozok = new DalEszkozok();
             VideoEszkozok = new VideokEszkozok();
-            dalAdatok = new List<Model.Dalok>();
+            dalAdatok = new List<Model.Dal>();
+            kepAdatok = new List<Model.Kep>();
+            igeAdatok = new List<Model.Igek>();
 
             model = new Model.Model()
             {
-                Lapok = Dal,
-                LapokEszkozok = DalEszkozok
+                Lapok = Ige,
+                LapokEszkozok = IgeEszkozok
             };
 
             content = new Model.ButtonContent()
@@ -103,7 +111,6 @@ namespace KivetítőWPF3MVVMPages.ViewModel
                 }
             }
         }
-
         private void Right_Button(object button)
         {
             Button temp = button as Button;

@@ -1,5 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using System.Windows.Controls;
+using System.Collections.ObjectModel;
+using System;
 
 namespace KivetítőWPF3MVVMPages.Model
 {
@@ -9,10 +11,18 @@ namespace KivetítőWPF3MVVMPages.Model
 
         private Page _lapok;
         private Page _lapokEszkozok;
+        private int _mainWidth;
+        private ObservableCollection<string> _cim;
+        private ObservableCollection<string> _szoveg;
+        private ObservableCollection<string> _szerzo;
+        private int _darabolas;
 
         #endregion
 
         #region Propertys
+
+        #region main Window Property-jei
+
         public Page Lapok
         {
             get => _lapok;
@@ -32,6 +42,18 @@ namespace KivetítőWPF3MVVMPages.Model
                 RaisePropertyChanged(() => this.LapokEszkozok);
             }
         }
+
+        public int MainWidth
+        {
+            get => _mainWidth; set
+            {
+                _mainWidth = value;
+                RaisePropertyChanged(() => this.MainWidth);
+            }
+        }
+
+        #endregion
+
         #endregion
     }
 }

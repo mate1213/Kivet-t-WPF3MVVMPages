@@ -9,43 +9,62 @@ namespace KivetítőWPF3MVVMPages.ViewModel
 {
     public class KepViewModel : ViewModelBase
     {
+
         #region Field
-        private ObservableCollection<Model.Kep> _model;
-        private double _width = 150;
+
+        private double _width = proba.Default.Width;
+        
+
         #endregion
 
         #region Property
 
-        public ObservableCollection<Model.Kep> model { get => _model; set => _model = value; }
-        public RelayCommand<string> Button_ClickCommand { get; set; }
-        public RelayCommand<string> ButtonFile_ClickCommand { get; set; }
+        #region AutoPropertys
+        public ViewModelLocator locator { get; set; }
+
+        public RelayCommand Button_ClickCommand { get; set; }
+        public RelayCommand ButtonFile_ClickCommand { get; set; }
+
+        #endregion
+
         public double Width
         {
             get => _width; set
             {
+                if (value > 49)
+                {
+                    foreach (var item in locator.MainView.kepAdatok)
+                    {
+                        item.Height = (int)(Width / item.Ratio);
+                    }
+                }
                 _width = value;
                 RaisePropertyChanged(() => this.Width);
             }
         }
 
         #endregion
-        
+
         #region Constructor
+
         public KepViewModel()
         {
-            model = new ObservableCollection<Model.Kep>();
-            Button_ClickCommand = new RelayCommand<string>(Click);
-            ButtonFile_ClickCommand = new RelayCommand<string>(ClickFile);
+            locator = new ViewModelLocator();
+
+            Button_ClickCommand = new RelayCommand(Click);
+            ButtonFile_ClickCommand = new RelayCommand(ClickFile);
         }
+
         #endregion
 
-        private void Click(string width)
+        #region Methods
+
+        private void Click()
         {
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if (fbd.ShowDialog() == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
             {
                 Model.Kep temp;
-                double ratio;
                 string[] fajlok = Directory.GetFiles(fbd.SelectedPath);
 
                 foreach (var item in fajlok)
@@ -54,41 +73,37 @@ namespace KivetítőWPF3MVVMPages.ViewModel
                     temp.KepHelye = item;
                     Bitmap bitmap = new Bitmap(item);
                     Size tempSize = bitmap.Size;
-                    ratio = (double)tempSize.Width / (double)tempSize.Height;
-                    temp.Width = 200;
-                    temp.Height = (int)((double)temp.Width / ratio);
-                    model.Add(temp);
+                    temp.Ratio = tempSize.Width / (double)tempSize.Height;
+                    temp.Height = (int)(Width / temp.Ratio);
+                    locator.MainView.kepAdatok.Add(temp);
                 }
             }
+            proba.Default.Save();
         }
 
-        private void ClickFile(string width)
+        private void ClickFile()
         {
             OpenFileDialog ofd = new OpenFileDialog() { Multiselect = true };
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 Model.Kep temp;
-                double ratio, tempDouble;
                 string[] fajlok = ofd.FileNames;
-                double.TryParse(width, out tempDouble);
-                Width = tempDouble;
 
                 foreach (var item in fajlok)
                 {
-                    temp = new Model.Kep();
-                    temp.KepHelye = item;
                     Bitmap bitmap = new Bitmap(item);
                     Size tempSize = bitmap.Size;
-                    ratio = tempSize.Width / (double)tempSize.Height;
-                    temp.Height = (int)(Width / ratio);
-                    model.Add(temp);
+                    temp = new Model.Kep();
+
+                    temp.KepHelye = item;
+                    temp.Ratio = tempSize.Width / (double)tempSize.Height;
+                    temp.Height = (int)(Width / temp.Ratio);
+                    locator.MainView.kepAdatok.Add(temp);
                 }
             }
         }
 
-        protected override void RaisePropertyChanged()
-        {
+        #endregion
 
-        }
     }
 }

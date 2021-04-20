@@ -113,67 +113,7 @@
             <Grid x:Name="Grid_IgeKartyak"
                         Margin="10,112,10,10">
                 <WrapPanel x:Name="WrapPanel_IgeKartyak" Margin="5" HorizontalAlignment="Center">
-                    <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-                    <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-
-                    <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-                    <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-                    <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-                    <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-                    <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-                    <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-                    <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-                    <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-                    <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-                    <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-                        <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-                        <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
-                    <Image Width="100"
-                               Height="56"
-                               Margin="5"
-                               Source="D:\Users\Máté\Pictures\háttérképek\WallpaperFusion-fractal-lion-3840x2160.jpg"/>
+                    
                 </WrapPanel>
 
             </Grid>

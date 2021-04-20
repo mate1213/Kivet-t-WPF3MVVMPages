@@ -76,7 +76,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataAccsessLayer.cs" />
-    <Compile Include="Model\Dalok.cs" />
+    <Compile Include="Model\Dal.cs" />
+    <Compile Include="Model\Igek.cs" />
     <Compile Include="Model\Kep.cs" />
     <Compile Include="Pages\Eszkozok\DalEszkozok.xaml.cs">
       <DependentUpon>DalEszkozok.xaml</DependentUpon>
@@ -102,6 +103,11 @@
     </Compile>
     <Compile Include="Pages\Eszkozok\VideokEszkozok.xaml.cs">
       <DependentUpon>VideokEszkozok.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="proba.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>proba.settings</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\DalViewModel.cs" />
     <Compile Include="ViewModel\IgeViewModel.cs" />
@@ -174,6 +180,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="proba.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>proba.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -186,7 +196,7 @@
     <Resource Include="TODO.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="24879292_171458696929084_1536750868_o.jpg" />
+    <Resource Include="Helper.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

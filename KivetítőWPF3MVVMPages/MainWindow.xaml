@@ -12,7 +12,7 @@
 
         <Grid.ColumnDefinitions>
 
-            <ColumnDefinition Width="2*"
+            <ColumnDefinition Width="{Binding model.MainWidth, Mode=OneWayToSource}"
                               MinWidth="490"/>
 
             <ColumnDefinition Width="*"

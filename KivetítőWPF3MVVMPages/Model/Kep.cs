@@ -6,7 +6,7 @@ namespace KivetítőWPF3MVVMPages.Model
     {
         private string _kepHelye;
         private int _height;
-        private int _width;
+        private double _ratio;
 
         public string KepHelye
         {
@@ -23,6 +23,15 @@ namespace KivetítőWPF3MVVMPages.Model
             {
                 _height = value;
                 RaisePropertyChanged(() => this.Height);
+            }
+        }
+
+        public double Ratio
+        {
+            get => _ratio; set
+            {
+                _ratio = value;
+                RaisePropertyChanged(() => this.Ratio);
             }
         }
     }

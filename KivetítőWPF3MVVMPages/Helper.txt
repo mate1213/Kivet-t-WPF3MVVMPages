@@ -1,0 +1,57 @@
+﻿
+Számok hitelesítése
+
+			TextBox tb = sender as TextBox;
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+
+Max Sam textBox-ba
+
+			int inttemp;
+            bool booltemp = int.TryParse(tb.Text, out inttemp);
+            if (inttemp > 250)
+            {
+                MessageBox.Show("Nagyobb szám nem elfogadott! Max:250", "Hiba!");
+                tb.Text = "";
+            }
+
+Command kötés billentyű bevitelre
+
+			<[Control].InputBindings>
+                <KeyBinding Command="{Binding}" Key="Enter"/>
+            </[Control].InputBindings>
+
+Command kötés egér bevitelre 
+
+            <[Control].InputBindings>
+                <MouseBinding MouseAction="LeftClick"
+                              Command="{Binding Button_ClickMeretCommand}"
+                              CommandParameter="{Binding ElementName=TextBox_Height, Path=Text}"/>
+            </[Control].InputBindings>
+
+Command kötés event-ekre
+
+			xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+			<ListBox ...>
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="SelectionChanged">
+						<i:InvokeCommandAction Command="{Binding SelectedItemChangedCommand}"/>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</ListBox>
+
+Command parameter fullo control
+
+			CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}}"
+
+EvenArgs binding
+
+////Ki kell egészíteni
+			<WebBrowser local:AttachedProperties.BrowserSource="{Binding Source}">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="Navigated">
+						<cmd:EventToCommand Command="{Binding NavigatedEvent}"
+							 PassEventArgsToCommand="True" />
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</WebBrowser>  
